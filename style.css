@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #6581c3;
+    padding-top: 20px;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imglogo {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    margin-bottom: 10px;
+    
+}
+img {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+/* .bg {
+   
+    opacity: 0.1;
+    margin: auto;
+}
+.bg img {
+    width: 100%;
+    height: fit-content;
+} */
+
+h1 {
+    color: #fff;
+    font-family: 'Inter',sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    
+}
+
+.group-name{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+h6 {
+    color: #fff;
+    font-family: 'Inter',sans-serif;
+    text-align: right;
+    width: 100%;
+    
+}
+
+.choice {
+    margin-top: 0px;
+    width: 100%;
+    margin-top: 300px;
+}
+h2 {
+    color: #fff;
+    font-family: 'Inter',sans-serif;
+    display: inline;
+    justify-content: flex-start;
+    margin-left: 450px;
+    
+}
+span {
+    margin-left: 150px;
+}
+button {
+    margin: 20px;
+    width: 70px;
+    height: 50px;
+}
+i {
+    margin: auto;
+    font-size: 24px;
+}
+
+
+.result {
+    margin-top: 60px;
+    font-family: 'Inter',sans-serif;
+    color: #fff;
+    text-align: center;
+    font-weight: 900;
+    font-size: xx-large;
+}
+.result * {
+    margin-top: 20px;
+}
+
+
+ @media only screen and (max-width: 768px){
+   
+    button { 
+        width: 70px;
+        height: 50px;
+    }
+    .choice {
+        width: 100%;
+        margin-left: 0px;
+        
+    }
+    h2 {
+        margin-left: 0;
+        text-align: center;
+        display: block;
+    }
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width : 1200px) {
+    .button {
+        width: 100%;
+    }
+    button {
+        
+        width: 70px;
+        height: 50px;
+    }
+    .choice {
+        width: 100%;
+        margin-left: 0px;
+        
+    }
+    h2 {
+        
+       margin: 0;
+    }
+    span {
+        margin-left: 50px;
+    }
+
+ 
+
+  }

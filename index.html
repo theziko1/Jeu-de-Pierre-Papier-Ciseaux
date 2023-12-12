@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/pierre-papier-ciseaux.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <title>Jeu de Pierre-Papier-Ciseaux</title>
+</head>
+<body>
+
+    <div class="header">
+        <div class="imglogo">
+        <img src="images/pierre-papier-ciseaux-white.png"  alt="ppc"/>
+        </div>
+        <!-- <div class="bg">
+        <img src="images/pierre-papier-ciseaux.png"  alt="">
+        </div> -->
+        <h1>Bienvenue sur le jeu de Pierre-Papier-Ciseaux</h1>
+        <div class="group-name">
+            <h6>Par Abtal Tech</h6>
+        </div>
+    </div>
+    <div class="result">
+
+    </div>
+    <div class="choice">
+            <h2>Choisir votre Choix :</h2>
+        <span class="button">   
+            <button id="pierre" value="pierre" onclick="Choix(pierre)"  ><i class="fa-regular fa-hand-back-fist"></i></button>
+            <button id="papier" value="papier" onclick="Choix(papier)"><i class="fa-regular fa-hand"></i></button>
+            <button id="ciseaux" value="ciseaux" onclick="Choix(ciseaux)" ><i class="fa-regular fa-hand-scissors"></i></button>
+       </span> 
+    </div>
+   
+</body>
+<script src="main.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</html>
