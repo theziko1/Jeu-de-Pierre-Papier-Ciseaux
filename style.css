@@ -60,6 +60,7 @@ h6 {
     text-align: right;
     width: 100%;
     
+    
 }
 
 .choice {
@@ -91,6 +92,7 @@ i {
 
 .result {
     margin-top: 60px;
+    margin-bottom: -30px;
     font-family: 'Inter',sans-serif;
     color: #fff;
     text-align: center;

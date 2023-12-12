@@ -95,6 +95,7 @@ let score_comp = 0;
       score_comp = 0;
       score_player = 0;
       resultdiv.removeChild(score)
+      
    }
  
  
