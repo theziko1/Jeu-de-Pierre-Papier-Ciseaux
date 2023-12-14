@@ -1,25 +1,37 @@
 let score_player = 0;
 let score_comp = 0;
+let tentative = 3;
+const resultdiv = document.querySelector('.result')
+
+document.querySelector('.choice').style.display = "none"
+
+setTimeout(() => {
+  document.querySelector('#container').style.display = "none"
+  document.querySelector('.choice').style.display = "block"
+}, 2000);
 
 
  function Choix(player) {
- 
+
+   document.querySelector('#container').style.display = "none"
+   document.querySelector('.choice').style.display = "block"
+
   let  choixArray =["pierre","papier","ciseaux"]
   let icon = ["fa-regular fa-hand-back-fist"," fa-regular fa-hand","fa-regular fa-hand-scissors"]
   let iconP = ["fa-regular fa-hand-back-fist"," fa-regular fa-hand","fa-regular fa-hand-scissors"]
   let choice = choixArray[Math.floor(Math.random() * choixArray.length)]
 
 
-  const resultdiv = document.querySelector('.result')
+  
 
   
     if (player.value == "pierre" && choice == "papier" || player.value == "papier" && choice == "ciseaux" || player.value == "ciseaux" && choice == "pierre" ) {
       
-      resultdiv.innerHTML = `<div style="color:red">Vous avez Perdu</div>`
+      resultdiv.innerHTML = `<div style="color:red; text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue">Vous avez Perdu</div>`
       score_comp++
     } else if(player.value == "pierre" && choice == "ciseaux" || player.value == "papier" && choice == "pierre"||player.value == "ciseaux" && choice == "papier") {
      
-      resultdiv.innerHTML =  `<div style="color:green">Vous avez Gagné</div>`
+      resultdiv.innerHTML =  `<div style="color:green; text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue">Vous avez Gagné</div>`
       score_player++
     }
     else if(player.value == "ciseaux" && choice == "ciseaux" || player.value == "papier" && choice == "papier" || player.value == "pierre" && choice == "pierre") {
@@ -69,7 +81,7 @@ let score_comp = 0;
       onClick: function(){} // Callback after click
     }).showToast(); 
       Toastify({
-      text: `Choix d'Ordinateur est ${choice}`,
+      text: `Choix d'ordinateur est ${choice}`,
       duration: 3000,
       newWindow: true,
       close: false,
@@ -84,22 +96,50 @@ let score_comp = 0;
       },
       onClick: function(){} // Callback after click
     }).showToast();   
+
+
+
     let score = document.createElement('p')
     resultdiv.appendChild(score)
-    score.innerHTML = `<div style="color:lightblue"> <i class="${iconP}" style="font-size:56px;"></i> utilisateur ${score_player} - ${score_comp} ordinateur <i class="${icon}" style="font-size:56px;"></i></div>`
+    score.innerHTML = `<div class="score" style="color:lightblue;text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;"> <i class="${iconP}" style=" animation :shakePlayer 2s ease; font-size:56px;"></i> utilisateur ${score_player} - ${score_comp} ordinateur <i class="${icon}" style="animation :shakeComputer 2s ease; font-size:56px;"></i></div>`
  
-    while (score_comp == 10 || score_player == 10) {
-      
 
-      resultdiv.innerHTML = `<button style="background:#fff;border:1px solid #000 color:green;"  onclick="Choix(pierre)">Nouvelle Partie</button>`
-      score_comp = 0;
-      score_player = 0;
-      resultdiv.removeChild(score)
-      
-   }
  
- 
+   tentative--
+   console.log(tentative);
+
+   if (tentative == 0){
+   
+    document.querySelector('#container').style.display = "block"
+    document.querySelector('.choice').style.display = "none"
+
+
+    resultdiv.innerHTML = `
+    <div style="margin-top:100px; color:lightblue;text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;"> <i class="${iconP}" style="animation :shakePlayer 2s ease;font-size:56px;"></i> utilisateur ${score_player} - ${score_comp} ordinateur <i class="${icon}"  style="animation :shakeComputer 2s ease; font-size:56px;"></i></div>
+    <br/>
+    <button class="NouvButton" onclick="reaload()" > Nouvelle Partie<div class="iconButton">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+    </div>
+  </button>`
+  
+    score_comp = 0;
+    score_player = 0;
+    
+   
+   tentative = 3
+ } 
+  
   }
+
+
+  function reaload() {
+    document.querySelector('#container').style.display = "none"
+    document.querySelector('.choice').style.display = "block"
+    resultdiv.innerHTML = ''
+  } 
+
+
+
 
 
 
