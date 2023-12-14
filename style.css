@@ -17,6 +17,7 @@ button:hover {
     cursor: pointer;
 }
 
+
 .header {
     width: 100%;
     display: flex;
@@ -74,7 +75,7 @@ h1 {
     justify-content: flex-end;
 }
 h6 {
-    animation: shakeComputer 2s ease;
+    animation: rotate 2s linear;
     color: #fff;
     font-family: 'Inter',sans-serif;
     text-align: right;
@@ -163,7 +164,7 @@ button {
     margin: 20px;
     width: 70px;
     height: 50px;
-    animation: shakeComputer 2s ease; 
+    
 }
 i {
     margin: auto;
@@ -185,6 +186,7 @@ i:hover {
     text-align: center;
     font-weight: 900;
     font-size: xx-large;
+    
 }
 .NouvButton {
     background: #7079f0;
@@ -319,7 +321,26 @@ i:hover {
     .score {
         font-size: 18px;
         display: inline;
+        width: fit-content;
+    } 
+     h6 {
+      margin-bottom: 200px;
+     }
+    i {
+      font-size: 18px !important;
     }
+    #container svg {
+      margin-top: 100px;
+      margin-bottom: 0;
+    }
+    .result {
+      margin-top: -150px;
+      font-size: 20px;
+      width: 100%;
+      
+    }
+    
+   
 }
 
 
@@ -346,9 +367,23 @@ i:hover {
         margin-left: 50px;
     }
     .score {
-        font-size: 48px;
+        font-size: 28px;
+        width: 300px;
+        display: inline;
     }
-
+   
+    i {
+      font-size: 28px !important;
+      display: inline;
+    }
+    #container svg {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+    .result {
+      width: 100%;
+      margin: auto;
+    }
  
 
   }

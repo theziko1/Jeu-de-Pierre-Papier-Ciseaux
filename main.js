@@ -66,12 +66,12 @@ setTimeout(() => {
 
     Toastify({
       text: `Choix de Joueur est ${player.value}`,
-      duration: 3000,
+      duration: 2000,
       newWindow: true,
       close: false,
       gravity: "top", // `top` or `bottom`
       position: "left", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
+      stopOnFocus: false, // Prevents dismissing of toast on hover
       style: {
         color: "#6581c3",
         fontFamily : "Inter",
@@ -82,12 +82,12 @@ setTimeout(() => {
     }).showToast(); 
       Toastify({
       text: `Choix d'ordinateur est ${choice}`,
-      duration: 3000,
+      duration: 2000,
       newWindow: true,
       close: false,
       gravity: "top", // `top` or `bottom`
       position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
+      stopOnFocus: false, // Prevents dismissing of toast on hover
       style: {
         color: "#6581c3",
         fontFamily : "Inter",
@@ -101,7 +101,7 @@ setTimeout(() => {
 
     let score = document.createElement('p')
     resultdiv.appendChild(score)
-    score.innerHTML = `<div class="score" style="color:lightblue;text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;"> <i class="${iconP}" style=" animation :shakePlayer 2s ease; font-size:56px;"></i> utilisateur ${score_player} - ${score_comp} ordinateur <i class="${icon}" style="animation :shakeComputer 2s ease; font-size:56px;"></i></div>`
+    score.innerHTML = `<div class="score" style="color:lightblue;text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;"> <i class="${iconP}" style=" animation :shakePlayer 2s ease; font-size:56px;"></i> utilisateur ${score_player} - ${score_comp} ordinateur <i class="${icon}" style="animation :shakeComputer 2s ease;font-size:56px;"></i></div>`
  
 
  
@@ -109,10 +109,14 @@ setTimeout(() => {
    console.log(tentative);
 
    if (tentative == 0){
+
+   
+
+    
    
     document.querySelector('#container').style.display = "block"
     document.querySelector('.choice').style.display = "none"
-
+   
 
     resultdiv.innerHTML = `
     <div style="margin-top:100px; color:lightblue;text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;"> <i class="${iconP}" style="animation :shakePlayer 2s ease;font-size:56px;"></i> utilisateur ${score_player} - ${score_comp} ordinateur <i class="${icon}"  style="animation :shakeComputer 2s ease; font-size:56px;"></i></div>
@@ -121,6 +125,62 @@ setTimeout(() => {
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
     </div>
   </button>`
+  if (score_player > score_comp) {
+    Toastify({
+      text: "tu gagnes la partie",
+      duration: 2000,
+      newWindow: true,
+      close: false,
+      gravity: "bottom", // `top` or `bottom`
+      position: "center", // `left`, `center` or `right`
+      stopOnFocus: false, // Prevents dismissing of toast on hover
+      style: {
+        color: "#fff",
+        fontFamily : "Inter",
+        fontWeight : 900,
+        background : "green",
+      },
+      onClick: function(){} // Callback after click
+    }).showToast(); 
+    
+  }
+   if (score_player < score_comp){
+    Toastify({
+      text: "ordinateur gagne la partie",
+      duration: 2000,
+      newWindow: true,
+      close: false,
+      gravity: "bottom", // `top` or `bottom`
+      position: "center", // `left`, `center` or `right`
+      stopOnFocus: false, // Prevents dismissing of toast on hover
+      style: {
+        color: "#fff",
+        fontFamily : "Inter",
+        fontWeight : 900,
+        background : "red",
+      },
+      onClick: function(){} // Callback after click
+    }).showToast();
+    
+  }  if (score_comp == score_player){
+    Toastify({
+      text: "égalité dans la partie",
+      duration: 2000,
+      newWindow: true,
+      close: false,
+      gravity: "bottom", // `top` or `bottom`
+      position: "center", // `left`, `center` or `right`
+      stopOnFocus: false, // Prevents dismissing of toast on hover
+      style: {
+        color: "#000",
+        fontFamily : "Inter",
+        fontWeight : 900,
+        background : "#fff",
+      },
+      onClick: function(){} // Callback after click
+    }).showToast();
+    
+  }
   
     score_comp = 0;
     score_player = 0;
@@ -128,6 +188,7 @@ setTimeout(() => {
    
    tentative = 3
  } 
+
   
   }
 
